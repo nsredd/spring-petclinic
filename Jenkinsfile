@@ -1,9 +1,15 @@
-node {
-    stage('Checkout'){
-        git 'https://github.com/ravtellu/spring-petclinic.git'
-    }
-
-    stage('build'){
-        sh 'mvn package'
+pipeline {
+    agent {label 'MASTER'}
+    stages {
+        stage('Checkout'){
+            steps {
+                git 'https://github.com/dummyrepos/spring-petclinic.git' 
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'mvn package'
+            }
+        }
     }
 }
