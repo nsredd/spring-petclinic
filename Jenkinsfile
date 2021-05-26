@@ -1,5 +1,5 @@
 node {
-    stage('Checkout') {
+    stage('Checkout'){
         git https://github.com/ravtellu/spring-petclinic.git
     }
 
